@@ -1,0 +1,112 @@
+package linde.change;
+
+import java.util.Scanner;
+import linde.change.business.ChangeCalc;
+
+public class ChangeCalcApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("Welcome to the change calculator!"); 
+		
+		Scanner sc = new Scanner(System.in); 
+		
+		String choice = "y"; 
+		
+		while (choice.equalsIgnoreCase("y")){
+			
+			// User types in the number of cents. 
+			System.out.println("Please type in the # of cents, between 0-99: ");
+			int changeCount = Integer.parseInt(sc.nextLine()); 
+			
+			ChangeCalc change = new ChangeCalc(); 
+			change.setChangeCount(changeCount);
+			
+			if (changeCount >= 25 && changeCount <= 99) {
+		
+				int quarters = change.getChangeCount() / 25; 
+				int quartersRemainder = change.getChangeCount() % 25; 
+				
+				System.out.println("Number of Quarters: " + quarters + "\n");
+				System.out.println("Quarters Remainder: " + quartersRemainder  + "\n");
+				
+				if  (quartersRemainder < 25 && quartersRemainder >= 10) {
+			
+					int dimes = quartersRemainder / 10; 
+					int dimesRemainder = quartersRemainder % 10; 
+			
+					System.out.println("Number of Dimes: " + dimes + "\n");
+					System.out.println("Dimes Remainder: " + dimesRemainder  + "\n");		
+				
+				 
+					if  (dimesRemainder < 10 && dimesRemainder >= 5) {
+						int nickels = change.getChangeCount() / 5; 
+						int nickelsRemainder = change.getChangeCount() % 5; 
+						
+						System.out.println("Number of Nickels: " + nickels + "\n");
+						System.out.println("Dimes Nickels: " + nickelsRemainder  + "\n");
+						
+						if  (nickelsRemainder < 5 && nickelsRemainder >= 0 ){  
+							 
+							int penniesRemainder = change.getChangeCount();  
+							System.out.println("Pennies: " + penniesRemainder  + "\n");
+						}
+					
+					}		
+				
+				// dummy type out to make sure logic tree works. 
+				System.out.println("QUARTERS!");
+		
+					}
+				
+			} else if  (changeCount < 25 && changeCount >= 10){  
+				
+				int dimes = change.getChangeCount() / 10; 
+				int dimesRemainder = change.getChangeCount() % 10; 
+							
+				System.out.println("Number of Dimes: " + dimes + "\n");
+				System.out.println("Dimes Remainder: " + dimesRemainder  + "\n");
+				
+				
+				// dummy type out to make sure logic tree works. 
+				System.out.println("DIMES!");
+				
+			
+			} else if  (changeCount < 10 && changeCount >= 5 ){  
+				
+				int nickels = change.getChangeCount() / 5; 
+				int nickelsRemainder = change.getChangeCount() % 5; 
+				
+				System.out.println("Number of Nickels: " + nickels + "\n");
+				System.out.println("Dimes Nickels: " + nickelsRemainder  + "\n");
+				
+				
+				// dummy type out to make sure logic tree works. 
+				System.out.println("NICKELS!");
+				
+			
+			} else if  (changeCount < 5 && changeCount >= 0 ){  
+				 
+				int penniesRemainder = change.getChangeCount();  
+				System.out.println("Pennies: " + penniesRemainder  + "\n");
+				
+				
+				// dummy type out to make sure logic tree works. 
+				System.out.println("PENNIES!");
+			
+			} else if (changeCount < 0 || changeCount > 99) {
+				
+				// dummy type out to make sure logic tree works. 
+				System.out.println("Number out of bounds!");
+			}
+			
+			System.out.println("Continue? y/n: ");
+			choice = sc.nextLine(); 
+		}
+		sc.close(); 	
+		System.out.println("Bye! Thank you for playing our little game!");
+		
+	}
+	
+}

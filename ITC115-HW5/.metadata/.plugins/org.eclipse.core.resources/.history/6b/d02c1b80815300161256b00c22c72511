@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+/**
+ * @author Lugano
+ *
+ */
+package assignment5;
+
+/*
+
+Coin Calculator Pseudocode. 
+
+0. Give a greeting. 
+1. Ask the user if they want to play (y/n). 
+2. If 'y', go into while loop. 
+3. If any response aside from 'y' (either case), don't go into while loop, 
+and end the program. 
+4. Give an ending message, and terminate the program. 
+
+while loop! 
+
+a. Ask user for the number of cents they want to enter; range: 0-99. 
+We didn't learn error handling yet, so expect the app to calculate if you 
+put in a number outside the range, and to throw an exception if a BOOL or 
+STRING is entered. 
+b. 4 coins - quarters, dimes, nickels, pennies. 
+
+QUARTERS: 
+c. Quarters counted first. If cents >= 25, then quarters = cents/25.
+d. Take the remainder, and put into another variable. 
+e. cents2 = cents%25. 
+
+DIMES:
+
+NICKLES:
+
+PENNIES: 
+
+
+
+
+
+*/ 

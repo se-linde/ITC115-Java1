@@ -1,0 +1,16 @@
+package linde.change.business;
+
+public class ChangeCalc {
+
+	private int quarters; 
+	private int dimes;
+	private int nickels;
+	private int pennies; 
+	private int count; 
+	
+	
+
+	
+}
+
+
